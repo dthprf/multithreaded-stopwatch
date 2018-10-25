@@ -53,7 +53,11 @@ public class StopwatchController {
         }
     }
 
-
+    private void displayAllTimersInfo() {
+        for (Stopwatch stopwatch : stopwatchesList) {
+            view.displayInfo(stopwatch);
+        }
+    }
 
 
 }
