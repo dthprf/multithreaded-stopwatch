@@ -68,5 +68,10 @@ public class StopwatchController {
         return null;
     }
 
+    private UserCommand parseCommandFromInput(String input) {
+        String[] splitedInput = input.toLowerCase().trim().split(" ", 2);
+        return new UserCommand(splitedInput);
+    }
+
 
 }
