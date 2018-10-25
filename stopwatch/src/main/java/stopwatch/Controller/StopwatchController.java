@@ -93,5 +93,21 @@ public class StopwatchController {
         }
     }
 
+    private void handleStopCommand(String stopWatchName) {
+        Stopwatch stopwatch = getStopwatchByName(stopWatchName);
+
+        if (stopwatch == null) {
+            view.displayMessage(ConsoleMessage.TIMER_NAME_ERROR);
+
+        } else if (!stopwatch.isPaused()) {
+            stopwatch.setPaused(true);
+            view.displayMessage(ConsoleMessage.PAUSED_INFO);
+
+        } else if (stopwatch.isPaused()) {
+            stopwatch.restartTimer();
+            view.displayMessage(ConsoleMessage.RESTARTED_INFO);
+        }
+    }
+
 
 }
