@@ -1,9 +1,14 @@
 package stopwatch.View;
 
-public class StopWatchView {
-    private static final String COMMAND_REQUEST_MESSAGE = "Enter command:";
+import stopwatch.Model.Stopwatch;
 
-    public void displayRequest() {
-        System.out.println(COMMAND_REQUEST_MESSAGE);
+public class StopWatchView {
+
+    public void displayInfo(Stopwatch stopwatch) {
+        System.out.println(stopwatch);
+    }
+
+    public void displayMessage(ConsoleMessage consoleMessage) {
+        System.out.println(consoleMessage.message());
     }
 }
