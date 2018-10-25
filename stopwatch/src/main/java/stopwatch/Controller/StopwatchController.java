@@ -59,5 +59,14 @@ public class StopwatchController {
         }
     }
 
+    private Stopwatch getStopwatchByName(String name) {
+        for (Stopwatch stopwatch : stopwatchesList) {
+            if (stopwatch.getStopwatchName().equals(name)) {
+                return stopwatch;
+            }
+        }
+        return null;
+    }
+
 
 }
