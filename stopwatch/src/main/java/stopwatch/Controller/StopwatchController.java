@@ -128,5 +128,9 @@ public class StopwatchController {
         }
     }
 
+    private void handleExitCommand() {
+        displayAllTimersInfo();
+        view.displayMessage(ConsoleMessage.EXIT_INFO);
 
+    }
 }
