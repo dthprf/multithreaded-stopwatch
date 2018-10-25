@@ -73,5 +73,25 @@ public class StopwatchController {
         return new UserCommand(splitedInput);
     }
 
+    private void handleStartCommand(String stopWatchName) {
+        Stopwatch stopwatch = getStopwatchByName(stopWatchName);
+        if (stopWatchName == null) {
+            view.displayMessage(ConsoleMessage.EMPTY_TIMER_NAME_ERROR);
+
+        } else if (stopwatch == null) {
+            Stopwatch newTimer = new Stopwatch(stopWatchName);
+            newTimer.start();
+            stopwatchesList.add(newTimer);
+            view.displayMessage(ConsoleMessage.TIMER_STARTED);
+
+        } else if (stopwatch.isPaused()) {
+            stopwatch.setPaused(false);
+            view.displayMessage(ConsoleMessage.UNPAUSED_INFO);
+
+        } else {
+            view.displayMessage(ConsoleMessage.TIMER_NAME_ERROR);
+        }
+    }
+
 
 }
