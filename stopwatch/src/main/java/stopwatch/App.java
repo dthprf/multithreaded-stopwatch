@@ -1,13 +1,12 @@
 package stopwatch;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import stopwatch.Controller.StopwatchController;
+import stopwatch.View.StopWatchView;
+
+public class App
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) {
+        StopwatchController controller = new StopwatchController(new StopWatchView());
+        controller.runApp();
     }
 }
