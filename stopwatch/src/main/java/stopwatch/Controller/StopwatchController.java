@@ -109,5 +109,24 @@ public class StopwatchController {
         }
     }
 
+    private void handleCheckCommand(String stopwatchName) {
+        if (stopwatchesList.size() == 0) {
+            view.displayMessage(ConsoleMessage.TIMERS_LIST_EMPTY);
+
+        } else if (stopwatchName == null) {
+            displayAllTimersInfo();
+
+        } else {
+            Stopwatch stopwatch = getStopwatchByName(stopwatchName);
+
+            if (stopwatch != null) {
+                view.displayInfo(stopwatch);
+
+            } else {
+                view.displayMessage(ConsoleMessage.TIMER_NAME_ERROR);
+            }
+        }
+    }
+
 
 }
